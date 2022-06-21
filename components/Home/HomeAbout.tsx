@@ -153,7 +153,7 @@ const HomeAbout = ({}: IProps) => {
               <MainButton
                 onClick={() => {
                   window.open(
-                    'https://drive.google.com/file/d/1SiWsdQXGpWJMvE_tWpfaivPkQTkhB456/view?usp=sharing',
+                    'https://drive.google.com/file/d/1xUuxTuwmwWN7u0ZXY-jHX9sTGqqF2jng/view?usp=sharing',
                     '_blank'
                   );
                 }}
