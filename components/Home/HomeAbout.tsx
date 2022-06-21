@@ -96,7 +96,7 @@ const HomeAbout = ({}: IProps) => {
       <Row>
         <Col>
           <Style.Item>
-            <p>12</p>
+            <p>11</p>
             <p>
               Years<br></br> Experience
             </p>
