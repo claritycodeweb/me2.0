@@ -6,9 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --fix && git add -A .",
+    "lint": "next lint",
     "prepare": "husky install",
-    "pre-commit": "next lint"
+    "pre-commit": "lint-staged"
   },
   "dependencies": {
     "next": "12.1.6",
