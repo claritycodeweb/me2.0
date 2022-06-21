@@ -1,3 +1,27 @@
 {
-  "extends": "next/core-web-vitals"
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "next",  
+    "next/core-web-vitals",
+    "prettier", 
+    "plugin:prettier/recommended", 
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended"
+  ],
+  "settings": {
+    "next": {
+      "rootDir": "showroom"
+    }
+  },
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "error",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "react/prop-types": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-explicit-any": "off"
+  }
 }
