@@ -27,12 +27,16 @@ const Item = styled.a`
   border-radius: 5px;
   padding: 2rem;
   gap: 1rem;
+  min-height: 190px;
   &:hover {
     h2 {
       transition: all 0.5s;
       color: ${({ theme }) => theme.palette.accent.primary};
     }
   }
+  ${({ theme }) => theme.breakpoints.down('mobile')`
+    min-height: auto;
+  `}
 `;
 
 const ItemImageWrapper = styled.div`
