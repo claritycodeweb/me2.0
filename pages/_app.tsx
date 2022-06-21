@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 
 import type { AppProps } from 'next/app';
-import { GlobalStyles } from './global';
+import GlobalStyles from './global';
 import { darkTheme, lightTheme } from '@config/themes/themes';
 import { useTheme } from '@hooks/use-theme';
 

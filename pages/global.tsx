@@ -2,7 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 import 'react-toastify/dist/ReactToastify.css';
 import { lighten } from 'polished';
-export const GlobalStyles = createGlobalStyle`
+
+const GlobalStyles = createGlobalStyle`
   ${normalize}
 
   *, *:before, *:after {
@@ -84,3 +85,5 @@ export const GlobalStyles = createGlobalStyle`
     ${({ theme }) => theme.mixins.fontSize({ tablet: 2.0 })}
   }
 `;
+
+export default GlobalStyles;
