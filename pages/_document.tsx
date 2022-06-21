@@ -8,6 +8,7 @@ import Document, {
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import getConfig from 'next/config';
+import React from 'react';
 
 export default class MyDocument extends Document {
   render() {
@@ -53,12 +54,12 @@ export default class MyDocument extends Document {
 
       return {
         ...initialProps,
-        styles: (
+        styles: [
           <>
             {initialProps.styles}
             {sheet.getStyleElement()}
-          </>
-        ),
+          </>,
+        ],
       };
     } finally {
       sheet.seal();
