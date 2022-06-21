@@ -1,8 +1,10 @@
 import { Col, Row } from '@components/FlexboxGrid';
 import MainLogo from '@components/Logos/LogoMain';
 import Container from '@styles/container.style';
+import Link from 'next/link';
 import { lighten } from 'polished';
 import React from 'react';
+import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
 import styled from 'styled-components';
 
 interface IProps {}
@@ -29,11 +31,29 @@ const FooterLogo = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  > div {
+  a {
     > div {
-      background-color: ${({ theme }) =>
-        lighten(0.2, theme.palette.background.default as string)};
+      > div {
+        background-color: ${({ theme }) =>
+          lighten(0.2, theme.palette.background.default as string)};
+      }
     }
+  }
+`;
+
+const FooterSocialIcons = styled.ul`
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  a {
+    color: white;
+    background: rgb(102, 102, 102);
+    border-radius: 50%;
+    padding: 0.75rem;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    transition: all 0.3s ease 0s;
   }
 `;
 
@@ -41,23 +61,64 @@ const Style = {
   FooterWrapper,
   FooterCopyright,
   FooterLogo,
+  FooterSocialIcons,
 };
 
 const Footer = ({}: IProps) => {
   return (
     <Style.FooterWrapper>
       <Container>
+        <Row>
+          <Col>
+            <Style.FooterSocialIcons>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/rafa%C5%82-pisarczyk-07a53399"
+                  target="blank"
+                  title="Linkedin"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedin size={20} />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/claritycodeweb"
+                  target="blank"
+                  title="GitHub"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub size={20} />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/claritycodeweb"
+                  target="blank"
+                  title="Facebook"
+                  rel="noopener noreferrer"
+                >
+                  <FaFacebook size={20} />
+                </a>
+              </li>
+            </Style.FooterSocialIcons>
+          </Col>
+          <Col>
+            <Style.FooterLogo>
+              <Link href="/">
+                <a>
+                  <MainLogo />
+                </a>
+              </Link>
+            </Style.FooterLogo>
+          </Col>
+        </Row>
         <Row between center>
           <Col>
             <Style.FooterCopyright>
               <p>Made by Rafał Pisarczyk </p>
-              <p>&copy; 2021 Rafal Pisrczyk - ALL RIGHTS RESERVED</p>
+              <p>&copy; 2021 Rafal Pisarczyk - ALL RIGHTS RESERVED</p>
             </Style.FooterCopyright>
-          </Col>
-          <Col>
-            <Style.FooterLogo>
-              <MainLogo />
-            </Style.FooterLogo>
           </Col>
         </Row>
       </Container>

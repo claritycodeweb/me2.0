@@ -1,15 +1,16 @@
 import MainButton from '@components/Buttons/MainButton';
 import { Row, Col } from '@components/FlexboxGrid';
+import {
+  HomeSectionHeader,
+  HomeSectionSubHeader,
+  HomeSectionWrapper,
+} from '@styles/common.styles';
 import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 import me from './me.jpg';
 
 interface IProps {}
-
-const HomeWrapper = styled.div`
-  margin: 10rem 0;
-`;
 
 const Item = styled.div`
   display: flex;
@@ -43,15 +44,6 @@ const HomeMeInfoSection = styled.div`
   padding-top: 4rem;
   font-size: 1.6rem;
   line-height: 2.2rem;
-  > h2 {
-    padding-bottom: 0.5rem;
-    border-bottom: 3px solid ${({ theme }) => theme.palette.accent.primary};
-    margin-bottom: 2rem;
-    display: inline-block;
-    font-weight: normal;
-    font-size: 3rem;
-  }
-
   > p,
   h5 {
     padding-bottom: 1.5rem;
@@ -84,15 +76,23 @@ const HomeMeImageSection = styled.div`
 `;
 
 const Style = {
-  HomeWrapper,
   HomeMeInfoSection,
   HomeMeImageSection,
   Item,
 };
 
 const HomeAbout = ({}: IProps) => {
+  const hireMe = () => {
+    const emailTo = 'rafalpisarczyk@gmail.com';
+    const emailSub = 'Hire Rafał';
+    const emailBody = 'Body here';
+    window.open(
+      `mailto:${emailTo}?&subject=${emailSub}&body=${emailBody}`,
+      '_self'
+    );
+  };
   return (
-    <Style.HomeWrapper>
+    <HomeSectionWrapper>
       <Row>
         <Col>
           <Style.Item>
@@ -122,8 +122,10 @@ const HomeAbout = ({}: IProps) => {
       <Row>
         <Col tablet={12}>
           <Style.HomeMeInfoSection>
-            <h2>About Me</h2>
-            <h5>Full-Stack Web Developer</h5>
+            <HomeSectionHeader>About Me</HomeSectionHeader>
+            <HomeSectionSubHeader>
+              Full-Stack Web Developer
+            </HomeSectionSubHeader>
             <p>
               I&apos;ve got my bachelor&apos;s degree in computer science in
               2010 and since that time I&apos;ve been working for software
@@ -147,7 +149,7 @@ const HomeAbout = ({}: IProps) => {
           <Style.HomeMeImageSection>
             <Image src={me} alt="Rafał Pisarczyk" width="200" height="200" />
             <p>
-              <MainButton>Hire Me</MainButton>
+              <MainButton onClick={hireMe}>Hire Me</MainButton>
               <MainButton
                 onClick={() => {
                   window.open(
@@ -162,7 +164,7 @@ const HomeAbout = ({}: IProps) => {
           </Style.HomeMeImageSection>
         </Col>
       </Row>
-    </Style.HomeWrapper>
+    </HomeSectionWrapper>
   );
 };
 

@@ -12,11 +12,18 @@ type RowType = {
   between?: boolean;
   first?: boolean;
   last?: boolean;
+  column?: boolean;
 };
 export const Row = styled.div<RowType>`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
+  ${(p) =>
+    p.column &&
+    css`
+      flex-direction: column;
+    `}
   ${(p) =>
     p.reverse &&
     css`
