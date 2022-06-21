@@ -66,7 +66,7 @@ export const darkTheme: DefaultTheme = {
       primary: '#373737',
     },
     accent: {
-      primary: '#b88c42',
+      primary: '#dea32a',
     },
     hover: {
       primary: '#db8548',
@@ -102,7 +102,7 @@ export const lightTheme: DefaultTheme = {
       primary: '#121212',
     },
     accent: {
-      primary: '#b88c42',
+      primary: '#dea32a',
     },
     hover: {
       primary: '#db8548',

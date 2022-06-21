@@ -1,9 +1,12 @@
-import { moveInLeft, moveInRight, opacity } from '@styles/animation.style';
+import MainButton from '@components/Buttons/MainButton';
+import { moveInLeft, moveInRight, fade } from '@styles/animation.style';
 import Container from '@styles/container.style';
 import Image from 'next/image';
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import avatar from './avatar.png';
+import { FaAngleDown } from 'react-icons/fa';
+
 interface IProps {}
 
 const HeroParalax = styled.div`
@@ -27,6 +30,10 @@ const HeroParalax = styled.div`
     left: 0px;
     z-index: 0;
   }
+
+  ${({ theme }) => theme.breakpoints.down('desktop')`
+    background-attachment: scroll;
+  `}
 `;
 
 const HeroText = styled.div`
@@ -56,7 +63,25 @@ const HeroInfo = styled.div`
 
   > h3 {
     animation: ${moveInLeft} 1.5s ease-out;
+    > span {
+      background-color: ${({ theme }) => theme.palette.accent.primary};
+      border-radius: 4px;
+      color: ${({ theme }) => theme.palette.background.default};
+      padding: 1rem;
+      margin-right: 1rem;
+      ${({ theme }) => theme.breakpoints.down('desktop')`
+        display: inline-block;
+        margin-bottom: 1.25rem
+      `}
+    }
   }
+
+  ${({ theme }) => theme.breakpoints.down('desktop')`
+   width: 100%;
+   > h3, h1 {
+    animation: ${fade} 1.5s ease-out;
+   }
+  `}
 `;
 
 const HeroQuote = styled.div`
@@ -71,6 +96,9 @@ const HeroQuote = styled.div`
     }
   }
   position: relative;
+  ${({ theme }) => theme.breakpoints.down('desktop')`
+    display: none;
+  `}
 `;
 
 const HeroImage = styled.div`
@@ -81,8 +109,45 @@ const HeroImage = styled.div`
   border-radius: 50%;
   overflow: hidden;
   opacity: 0;
-  animation: ${opacity} 1.5s ease-out 1s;
+  animation: ${fade} 1.5s ease-out 1s;
   animation-fill-mode: forwards;
+  box-shadow: rgb(0, 0, 0) 0px 0px 40px;
+`;
+
+const appearFromTop = keyframes`
+    0% {   
+        transform: translate(-50%,-3rem);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+    75% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%,0);
+        opacity: 0;
+    }
+`;
+
+const ScrollButton = styled(MainButton)`
+  border-radius: 50%;
+  padding: 1.8rem;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  color: ${({ theme }) => theme.palette.background.default};
+  animation: ${appearFromTop} 2s ease-out infinite;
+  &:hover {
+    animation-play-state: paused;
+  }
 `;
 
 const Style = {
@@ -101,7 +166,9 @@ const HomeHero = ({}: IProps) => {
           <Style.HeroInfo>
             <span>Hi</span>
             <h1>I&apos;m Rafał</h1>
-            <h3>Full-stack Web Developer and Designer</h3>
+            <h3>
+              <span>Full-stack Web Developer </span>and Designer
+            </h3>
           </Style.HeroInfo>
           <Style.HeroQuote>
             <p>
@@ -115,6 +182,9 @@ const HomeHero = ({}: IProps) => {
           </Style.HeroQuote>
         </Style.HeroText>
       </Container>
+      <ScrollButton>
+        <FaAngleDown size={25} />
+      </ScrollButton>
     </Style.HeroParalax>
   );
 };

@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '@components/Header/TopNav';
 
 import { ToastContainer } from 'react-toastify';
+import Footer from '@components/Footer';
 
 interface IProps {
   title?: string;
@@ -26,6 +27,7 @@ const MainLayout = ({ children, title, description, keywords }: IProps) => {
       <ToastContainer />
       <Header />
       {children}
+      <Footer />
     </div>
   );
 };

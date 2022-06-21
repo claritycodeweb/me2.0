@@ -1,3 +1,4 @@
+import HomeAbout from '@components/Home/HomeAbout';
 import HomeHero from '@components/Home/HomeHero';
 import MainLayout from '@components/Layouts/MainLayout';
 import Container from '@styles/container.style';
@@ -8,10 +9,7 @@ const Home: NextPage = () => {
     <MainLayout>
       <HomeHero />
       <Container>
-        <section style={{ height: '500px' }}>here</section>
-        <section style={{ height: '500px' }}>here</section>
-        <section style={{ height: '500px' }}>here</section>
-        <section style={{ height: '500px' }}>here</section>
+        <HomeAbout />
       </Container>
     </MainLayout>
   );

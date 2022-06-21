@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 
 const Bg = styled.div`
   padding: 0.5rem;
-  background-color: rgb(222, 163, 42);
+  background-color: ${({ theme }) => theme.palette.accent.primary};
   margin: 0px 1px;
 `;
 

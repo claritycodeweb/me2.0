@@ -1,4 +1,4 @@
-import { opacity, slide } from '@styles/animation.style';
+import { fade, slide } from '@styles/animation.style';
 import styled, { css } from 'styled-components';
 
 const HeaderWrapper = styled.nav<{ isSticky: boolean }>`
@@ -35,7 +35,7 @@ const HeaderMain = styled.div`
       display: none;
     `}
     opacity: 0;
-    animation: ${opacity} 1.5s ease-out 0.5s;
+    animation: ${fade} 1.5s ease-out 0.5s;
     animation-fill-mode: forwards;
   }
 

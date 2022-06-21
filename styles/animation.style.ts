@@ -1,6 +1,6 @@
 import { keyframes } from 'styled-components';
 
-const opacity = keyframes`
+const fade = keyframes`
   0% {
     opacity: 0;
   }
@@ -52,4 +52,4 @@ const moveInLeft = keyframes`
     }
 `;
 
-export { opacity, slide, moveInLeft, moveInRight };
+export { fade, slide, moveInLeft, moveInRight };
