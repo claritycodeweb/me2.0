@@ -36,9 +36,11 @@ const S = {
       transform: scale(1.5);
     }
 
-    &:hover {
-      &:after {
-        opacity: 0.4;
+    @media (hover: hover) {
+      &:hover {
+        &:after {
+          opacity: 0.4;
+        }
       }
     }
 

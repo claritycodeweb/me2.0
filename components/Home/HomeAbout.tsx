@@ -35,8 +35,10 @@ const Item = styled.div`
     }
   }
   transition: all 0.5s;
-  &:hover {
-    transform: translateY(-1rem) scale(1.02);
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-1rem) scale(1.02);
+    }
   }
 `;
 

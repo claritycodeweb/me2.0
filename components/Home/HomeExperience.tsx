@@ -35,14 +35,16 @@ const Item = styled.a`
   gap: 1rem;
   min-height: 190px;
   transition: all 1s;
-  &:hover {
-    h2 {
-      transition: all 1s;
-      color: ${({ theme }) => theme.palette.accent.primary};
-    }
-    transform: translateX(1.5rem);
-    ${ItemImageWrapper} {
-      filter: none;
+  @media (hover: hover) {
+    &:hover {
+      h2 {
+        transition: all 1s;
+        color: ${({ theme }) => theme.palette.accent.primary};
+      }
+      transform: translateX(1.5rem);
+      ${ItemImageWrapper} {
+        filter: none;
+      }
     }
   }
   ${({ theme }) => theme.breakpoints.down('mobile')`
