@@ -16,6 +16,12 @@ import stp from './company-logos/stp.jpeg';
 
 interface IProps {}
 
+const ItemImageWrapper = styled.div`
+  flex: 1;
+  text-align: center;
+  filter: grayscale(1);
+`;
+
 const Item = styled.a`
   display: flex;
   justify-content: center;
@@ -28,20 +34,20 @@ const Item = styled.a`
   padding: 2rem;
   gap: 1rem;
   min-height: 190px;
+  transition: all 1s;
   &:hover {
     h2 {
-      transition: all 0.5s;
+      transition: all 1s;
       color: ${({ theme }) => theme.palette.accent.primary};
+    }
+    transform: translateX(1.5rem);
+    ${ItemImageWrapper} {
+      filter: none;
     }
   }
   ${({ theme }) => theme.breakpoints.down('mobile')`
-    min-height: auto;
+    min-height: 130px;
   `}
-`;
-
-const ItemImageWrapper = styled.div`
-  flex: 1;
-  text-align: center;
 `;
 
 const ItemMediaBody = styled.div`
@@ -116,7 +122,12 @@ const HomeExperience = ({}: IProps) => {
       <Row column>
         {items.map((item) => (
           <Col key={item.id}>
-            <Style.Item href={item.href} target="_blank" rel="noreferrer">
+            <Style.Item
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+              title={item.headline}
+            >
               <Style.ItemImageWrapper>
                 <Image
                   src={item.logo}

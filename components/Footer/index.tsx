@@ -64,6 +64,8 @@ const Style = {
   FooterSocialIcons,
 };
 
+const currentYear = new Date().getFullYear();
+
 const Footer = ({}: IProps) => {
   return (
     <Style.FooterWrapper>
@@ -117,7 +119,7 @@ const Footer = ({}: IProps) => {
           <Col>
             <Style.FooterCopyright>
               <p>Made by Rafał Pisarczyk </p>
-              <p>&copy; 2021 Rafal Pisarczyk - ALL RIGHTS RESERVED</p>
+              <p>&copy; {currentYear} Rafal Pisarczyk - ALL RIGHTS RESERVED</p>
             </Style.FooterCopyright>
           </Col>
         </Row>

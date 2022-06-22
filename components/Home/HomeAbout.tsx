@@ -62,6 +62,7 @@ const HomeMeImageSection = styled.div`
   img {
     border-radius: 50%;
     border: 2px solid white !important;
+    filter: sepia(0.8);
   }
   > p {
     > button {
@@ -127,17 +128,17 @@ const HomeAbout = ({}: IProps) => {
               Full-Stack Web Developer
             </HomeSectionSubHeader>
             <p>
-              I&apos;ve got my bachelor&apos;s degree in computer science in
-              2010 and since that time I&apos;ve been working for software
-              companies of all sizes from all around the globe as a software
-              developer. I&apos;m specialize in full-stack, highly scalable,
-              real-time JavaScript/Node.js and ASP.net applications, with past
-              experience in Java.
+              I got my bachelor&apos;s degree in computer science in 2010 and
+              since that time I&apos;ve been working for software companies of
+              all sizes from all around the globe as a software developer. I
+              specialize in full-stack, highly scalable, real-time
+              JavaScript/Node.js and ASP.net applications, with past experience
+              in Java
             </p>
             <p>
-              Currently, I enjoys working as a full-stack developer in
+              Currently, I enjoy working as a full-stack developer in
               node.js/javascript/asp.net projects, where my experience and my
-              deep understanding of architecture and theory are most impactful.
+              deep understanding of architecture and theory is most impactful.
             </p>
             <p>Polish - native</p>
             <p>
