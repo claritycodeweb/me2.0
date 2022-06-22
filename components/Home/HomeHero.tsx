@@ -159,6 +159,12 @@ const Style = {
 };
 
 const HomeHero = ({}: IProps) => {
+  const scroll = () => {
+    window.scrollTo({
+      top: window.innerHeight - 90,
+      behavior: 'smooth',
+    });
+  };
   return (
     <Style.HeroParalax>
       <Container>
@@ -182,7 +188,7 @@ const HomeHero = ({}: IProps) => {
           </Style.HeroQuote>
         </Style.HeroText>
       </Container>
-      <ScrollButton>
+      <ScrollButton onClick={scroll}>
         <FaAngleDown size={25} />
       </ScrollButton>
     </Style.HeroParalax>
