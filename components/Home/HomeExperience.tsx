@@ -66,16 +66,16 @@ const Style = { Item, ItemMediaBody, ItemImageWrapper };
 const items = [
   {
     id: 1,
-    headline: 'Classeek SA.',
+    headline: 'Senior Full-Stack Developer (Tech leader)',
     logo: cl,
-    start: 'November 2021',
+    start: 'June 2020',
     end: '',
     body: 'Classeek is leveraging technology in order to sustainably support classical music as a constantly evolving genre and to improve efficiencies and the method through which young artists are discovered and presented.',
     href: 'https://www.linkedin.com/company/classeek/',
   },
   {
     id: 2,
-    headline: 'Lookmove SA.',
+    headline: 'Senior Full-Stack Developer',
     logo: lm,
     start: 'January 2018',
     end: 'November 2021',
@@ -84,7 +84,7 @@ const items = [
   },
   {
     id: 3,
-    headline: 'Schibsted Tech Polska',
+    headline: 'Software Engineer',
     logo: stp,
     start: 'June 2014',
     end: 'December 2017',
@@ -93,7 +93,7 @@ const items = [
   },
   {
     id: 4,
-    headline: 'Qumak SA.',
+    headline: 'Software Engineer',
     logo: qm,
     start: 'September 2011',
     end: 'May 2014',
