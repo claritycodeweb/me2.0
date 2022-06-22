@@ -1,12 +1,13 @@
 import { fade, slide } from '@styles/animation.style';
 import styled, { css } from 'styled-components';
 
-const HeaderWrapper = styled.nav<{ isSticky: boolean }>`
+const HeaderWrapper = styled.section<{ isSticky: boolean }>`
   background: ${({ theme }) => theme.palette.background.default};
   width: 100%;
   font-size: 1.6rem;
   position: sticky;
   box-shadow: rgb(0 0 0 / 45%) 0px 0px 40px;
+  z-index: 1;
   ${({ isSticky }) =>
     isSticky &&
     css`
@@ -16,9 +17,9 @@ const HeaderWrapper = styled.nav<{ isSticky: boolean }>`
       animation: ${slide} 0.8s;
       font-size: 1.2rem;
       ${HeaderMain} {
-        height: 6rem;
+        padding: 1.5rem 0;
       }
-    `}
+    `};
 `;
 
 const HeaderMain = styled.div`
@@ -41,6 +42,8 @@ const HeaderMain = styled.div`
 
   a {
     color: #333;
+  }
+  > a {
     margin-right: 20px;
   }
 

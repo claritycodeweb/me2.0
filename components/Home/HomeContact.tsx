@@ -44,7 +44,7 @@ const HomeContact = ({}: IProps) => {
   const { values, handleChange } = useForm({ name: '', email: '' });
 
   return (
-    <HomeSectionWrapper>
+    <HomeSectionWrapper id="home-contact">
       <Row>
         <Col tablet={12}>
           <HomeSectionHeader>Contact info</HomeSectionHeader>

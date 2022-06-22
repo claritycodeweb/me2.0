@@ -93,7 +93,7 @@ const HomeAbout = ({}: IProps) => {
     );
   };
   return (
-    <HomeSectionWrapper>
+    <HomeSectionWrapper id="home-about">
       <Row>
         <Col>
           <Style.Item>

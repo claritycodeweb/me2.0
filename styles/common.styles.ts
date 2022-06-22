@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const HomeSectionWrapper = styled.section`
   margin: 10rem 0;
+  scroll-margin-block-start: 150px;
 `;
 
 const HomeSectionHeader = styled.h2`

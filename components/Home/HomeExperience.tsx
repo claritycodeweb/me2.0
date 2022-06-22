@@ -110,7 +110,7 @@ const items = [
 
 const HomeExperience = ({}: IProps) => {
   return (
-    <HomeSectionWrapper>
+    <HomeSectionWrapper id="home-experience">
       <Row>
         <Col>
           <HomeSectionHeader>Experience</HomeSectionHeader>

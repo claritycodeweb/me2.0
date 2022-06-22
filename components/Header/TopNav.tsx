@@ -5,11 +5,9 @@ import Style from './topnav.styles';
 import Container from '@styles/container.style';
 import Logo from '@components/Logos/LogoMain';
 
-// import Burger from './Burger';
 import useSticky from '@hooks/use-sticky';
 import Burger from '@components/BurgerButton/BurgerButton';
-// import NavBar from './NavBar';
-// import Portal from '../Portal/Portal';
+import NavBar from './NavBar';
 
 interface IProps {}
 
@@ -27,13 +25,10 @@ const MainHeader = ({}: IProps) => {
             </a>
           </Link>
 
-          {/* <Search /> */}
           <h2>Create digital products with unique idea</h2>
 
           <Burger open={open} setOpen={setOpen} />
-          {/* <Portal name="#nav-bar">
-            <NavBar open={open} setOpen={setOpen} />
-          </Portal> */}
+          <NavBar open={open} />
         </Style.Header.Main>
       </Container>
     </Style.Header.Wrapper>
