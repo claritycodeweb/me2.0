@@ -12,10 +12,10 @@ import BlurImage from '@components/Images/BlurImage';
 import months from 'utils/months';
 import { lighten } from 'polished';
 import { FaCalendarAlt } from 'react-icons/fa';
+import useFetch from '@hooks/use-fetch';
+import Loading from '@components/Loaders/Loading';
 
-interface IProps {
-  articles: IArticle[];
-}
+interface IProps {}
 
 const ArticleWrapper = styled.div`
   display: flex;
@@ -109,7 +109,11 @@ const ArticleCard = ({ article }: { article: IArticle }) => {
   );
 };
 
-const HomeBlog = ({ articles }: IProps) => {
+const HomeBlog = ({}: IProps) => {
+  const { data: articles, error } = useFetch<IArticle[]>({
+    path: `/api/articles`,
+  });
+
   return (
     <HomeSectionWrapper id="home-blog">
       <Row>
@@ -121,17 +125,19 @@ const HomeBlog = ({ articles }: IProps) => {
         </Col>
       </Row>
       <Row>
-        {articles.map((article) => {
-          return (
-            <Col mobile={12} key={article.id}>
-              <Link href={`/articles/${article.pathname},${article.id}`}>
-                <a>
-                  <ArticleCard article={article} />
-                </a>
-              </Link>
-            </Col>
-          );
-        })}
+        <Loading isLoading={!articles} error={error}>
+          {articles?.slice(0, 2).map((article) => {
+            return (
+              <Col mobile={12} key={article.id}>
+                <Link href={`/articles/${article.pathname},${article.id}`}>
+                  <a>
+                    <ArticleCard article={article} />
+                  </a>
+                </Link>
+              </Col>
+            );
+          })}
+        </Loading>
       </Row>
     </HomeSectionWrapper>
   );
