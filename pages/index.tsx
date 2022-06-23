@@ -27,10 +27,10 @@ const Home: NextPage<IProps> = ({ articles }: IProps) => {
   );
 };
 
-export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/api/articles`);
+export async function getServerSideProps() {
+  const response = await fetch(`${API_URL}/api/articles`);
 
-  const articles = await res.json();
+  const articles = await response.json();
 
   return {
     props: { articles: articles.slice(0, 2) },
