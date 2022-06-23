@@ -27,7 +27,7 @@ const Home: NextPage<IProps> = ({ articles }: IProps) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const response = await fetch(`${API_URL}/api/articles`);
 
   const articles = await response.json();
