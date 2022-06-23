@@ -86,6 +86,9 @@ const NavBar = ({ open }: IProps) => {
               <a href="#home-experience">Experience</a>
             </li>
             <li>
+              <a href="#home-blog">Blog</a>
+            </li>
+            <li>
               <a href="#home-contact">Contact</a>
             </li>
           </ul>

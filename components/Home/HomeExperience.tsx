@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { lighten } from 'polished';
 import React from 'react';
 import styled from 'styled-components';
+import months from 'utils/months';
 
 import cl from './company-logos/cl.jpeg';
 import lm from './company-logos/lm.jpeg';
@@ -76,8 +77,10 @@ const items = [
     id: 1,
     headline: 'Senior Full-Stack Developer (Tech leader)',
     logo: cl,
-    start: 'June 2020',
-    end: '',
+    start: 'June, 2020',
+    end: 'Present',
+    startTime: new Date('2020-06-01'),
+    endTime: new Date(),
     body: 'Classeek is leveraging technology in order to sustainably support classical music as a constantly evolving genre and to improve efficiencies and the method through which young artists are discovered and presented.',
     href: 'https://www.linkedin.com/company/classeek/',
   },
@@ -85,8 +88,10 @@ const items = [
     id: 2,
     headline: 'Senior Full-Stack Developer',
     logo: lm,
-    start: 'January 2018',
-    end: 'November 2021',
+    start: 'January, 2018',
+    end: 'November, 2021',
+    startTime: new Date('2018-01-01'),
+    endTime: new Date('2021-11-01'),
     body: 'Simplify the real estate journey for individuals and provide real estate professionals with the ultimate tool for automating and optimizing client prospection.',
     href: 'https://www.linkedin.com/company/lookmove/',
   },
@@ -94,8 +99,8 @@ const items = [
     id: 3,
     headline: 'Software Engineer',
     logo: stp,
-    start: 'June 2014',
-    end: 'December 2017',
+    startTime: new Date('2014-06-01'),
+    endTime: new Date('2017-12-01'),
     body: 'SimpHigh quality software development for a family of digital consumer brands. For passionate engineers!',
     href: 'https://www.linkedin.com/company/schibsted-tech-polska/',
   },
@@ -103,12 +108,44 @@ const items = [
     id: 4,
     headline: 'Software Engineer',
     logo: qm,
-    start: 'September 2011',
-    end: 'May 2014',
+    start: 'September, 2011',
+    end: 'May, 2014',
+    startTime: new Date('2011-09-01'),
+    endTime: new Date('2014-05-01'),
     body: 'Software house',
     href: 'https://www.linkedin.com/company/qumak-sa/',
   },
 ];
+
+const workTime = (startDate: Date, endDate: Date) => {
+  const diffMonths =
+    (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+    (endDate.getMonth() - startDate.getMonth() - 1);
+
+  const diffYears = Math.floor(diffMonths / 12);
+  const months = diffMonths % 12;
+
+  if (diffYears) {
+    if (diffYears > 1 && months > 1) {
+      return `${diffYears} years, ${months} Month`;
+    }
+    if (months > 1) {
+      return `${diffYears} year, ${months} Month`;
+    }
+  }
+  return `${months} Month`;
+};
+
+const date = (startDate: Date, endDate: Date) => {
+  const startMonth = months[startDate.getMonth()];
+  const endMonth = months[endDate.getMonth()];
+  const startYear = startDate.getFullYear();
+  const endYear = endDate.getFullYear();
+  if (endDate.toDateString() === new Date().toDateString()) {
+    return `${startMonth}, ${startYear} - Present`;
+  }
+  return `${startMonth}, ${startYear} - ${endMonth}, ${endYear}`;
+};
 
 const HomeExperience = ({}: IProps) => {
   return (
@@ -141,8 +178,8 @@ const HomeExperience = ({}: IProps) => {
               <Style.ItemMediaBody>
                 <h2>{item.headline}</h2>
                 <h5>
-                  {item.start}
-                  {item.end ? `-${item.end}` : ''}
+                  {date(item.startTime, item.endTime)}
+                  &nbsp;({workTime(item.startTime, item.endTime)})
                 </h5>
                 <p>{item.body}</p>
               </Style.ItemMediaBody>

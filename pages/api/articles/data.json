@@ -1,0 +1,102 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "mainCategory": "es6",
+      "subCategory": ["es6", "variables"],
+      "pathname": "var-let-const",
+      "title": "ES6 - var, let and const in depth",
+      "description": "In this post we are going to explore the difference between var, let and const. \n      In ES5 we have only one way to declaring variables using var but ES6 gives us two extra \n      keyword to do this let and const.",
+      "shortDesc": "Learn how to use let and const",
+      "date": 1476403200000,
+      "mainImage": "/images/articles/es6Image.png",
+      "author": "Rafal Pisarczyk",
+      "resources": [
+        {
+          "name": "mozilla-let",
+          "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "mainCategory": "es6",
+      "subCategory": ["es6", "filter", "map"],
+      "pathname": "arrow-function",
+      "title": "ES6 - arrow function",
+      "description": "In this post we are going to explore one of the most interesting and most popular \n    ES6 feature and you have probably seen them around, they look like (x)=> x + 1. \n    Generally it is a new shorter syntax for defining function in javascript.",
+      "shortDesc": "Learn how to use arrow function",
+      "date": 1479081600000,
+      "mainImage": "/images/articles/es6Image.png",
+      "author": "Rafal Pisarczyk",
+      "resources": [
+        {
+          "name": "mozilla-map",
+          "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "mainCategory": "nodejs",
+      "subCategory": ["es6", "nodejs", "fs"],
+      "pathname": "files-and-fs",
+      "title": "Node.js - files and fs",
+      "description": "In this post we are going to explore The Node File System (fs) : var fs = require('fs') fs module can deal directly with files. Let's create a text file and named it data.txt: Hello from file! Let's read this file using readFileSync function: var fs = req",
+      "shortDesc": "Learn how to use filestream by builiding simple nodejs server.",
+      "date": 1479081600000,
+      "mainImage": "/images/articles/nodeJsImage.png",
+      "author": "Rafal Pisarczyk",
+      "resources": [
+        {
+          "name": "w3-files",
+          "link": "https://www.w3schools.com/nodejs/nodejs_filesystem.asp"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "mainCategory": "nodejs",
+      "subCategory": ["es6", "nodejs", "promise"],
+      "pathname": "promise",
+      "title": "Node.js - Promise",
+      "description": "In this post we are going to explore Promise. Promises are, just like old callbacks, a way of dealing with things being asynchronous (when we don't know certainly in what order things will happen). But promises are more powerful and much more elegant",
+      "date": 1479772800000,
+      "shortDesc": "Learn how to use Promise by updating simple nodejs server with 'fs' module.",
+      "mainImage": "/images/articles/bg5.jpg",
+      "author": "Rafal Pisarczyk",
+      "resources": [
+        {
+          "name": "mozilla-promise",
+          "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "mainCategory": "nodejs",
+      "subCategory": ["REST API", "nodejs", "caching", "express", "middleware"],
+      "pathname": "api-secure",
+      "title": "Node.js - API Secure",
+      "description": "Simple securing REST api by adding caching, api-key protecting, rate limiting and slowing down request.",
+      "date": 1528588800000,
+      "shortDesc": "How would you secure an api without any sort of user login ?",
+      "mainImage": "/images/articles/bg1.jpg",
+      "author": "Rafal Pisarczyk",
+      "resources": [
+        {
+          "name": "memory-caching",
+          "link": "https://hazelcast.com/glossary/memory-caching"
+        },
+        {
+          "name": "rate-limiting",
+          "link": "https://www.npmjs.com/package/express-rate-limit"
+        },
+        {
+          "name": "slow-down-requests",
+          "link": "https://www.npmjs.com/package/express-slow-down"
+        }
+      ]
+    }
+  ]
+}
