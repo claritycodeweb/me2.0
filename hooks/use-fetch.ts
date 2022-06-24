@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import { API_URL } from '../config';
+// import { API_URL } from '../config';
 
 interface IProps {
   path: string;
@@ -14,7 +14,7 @@ const fetcher = (url: string) =>
   });
 
 const useFetch = <T = any, P = any>({ path }: IProps) => {
-  const { data, error } = useSWR<T, P>(`${API_URL}${path}`, fetcher);
+  const { data, error } = useSWR<T, P>(`${path}`, fetcher);
 
   return { data, error };
 };
