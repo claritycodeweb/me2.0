@@ -3,7 +3,7 @@ import { Row, Col } from '@components/FlexboxGrid';
 import {
   HomeSectionHeader,
   HomeSectionSubHeader,
-  HomeSectionWrapper,
+  SectionWrapper,
 } from '@styles/common.styles';
 import Image from 'next/image';
 import React from 'react';
@@ -95,7 +95,7 @@ const HomeAbout = ({}: IProps) => {
     );
   };
   return (
-    <HomeSectionWrapper id="home-about">
+    <SectionWrapper id="home-about">
       <Row>
         <Col>
           <Style.Item>
@@ -167,7 +167,7 @@ const HomeAbout = ({}: IProps) => {
           </Style.HomeMeImageSection>
         </Col>
       </Row>
-    </HomeSectionWrapper>
+    </SectionWrapper>
   );
 };
 

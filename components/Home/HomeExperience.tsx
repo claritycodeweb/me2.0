@@ -2,7 +2,7 @@ import { Row, Col } from '@components/FlexboxGrid';
 import {
   HomeSectionHeader,
   HomeSectionSubHeader,
-  HomeSectionWrapper,
+  SectionWrapper,
 } from '@styles/common.styles';
 import Image from 'next/image';
 import { lighten } from 'polished';
@@ -149,7 +149,7 @@ const date = (startDate: Date, endDate: Date) => {
 
 const HomeExperience = ({}: IProps) => {
   return (
-    <HomeSectionWrapper id="home-experience">
+    <SectionWrapper id="home-experience">
       <Row>
         <Col>
           <HomeSectionHeader>Experience</HomeSectionHeader>
@@ -187,7 +187,7 @@ const HomeExperience = ({}: IProps) => {
           </Col>
         ))}
       </Row>
-    </HomeSectionWrapper>
+    </SectionWrapper>
   );
 };
 

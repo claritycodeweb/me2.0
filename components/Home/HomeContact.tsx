@@ -2,7 +2,7 @@ import MainButton from '@components/Buttons/MainButton';
 import { Row, Col } from '@components/FlexboxGrid';
 import Form from '@components/Forms/Form';
 import { useForm } from '@hooks/use-form';
-import { HomeSectionHeader, HomeSectionWrapper } from '@styles/common.styles';
+import { HomeSectionHeader, SectionWrapper } from '@styles/common.styles';
 import React from 'react';
 import { FaEnvelope, FaLocationArrow, FaPhone } from 'react-icons/fa';
 import { toast } from 'react-toastify';
@@ -46,7 +46,7 @@ const HomeContact = ({}: IProps) => {
   const { values, handleChange } = useForm({ name: '', email: '' });
 
   return (
-    <HomeSectionWrapper id="home-contact">
+    <SectionWrapper id="home-contact">
       <Row>
         <Col tablet={12}>
           <HomeSectionHeader>Contact info</HomeSectionHeader>
@@ -161,7 +161,7 @@ const HomeContact = ({}: IProps) => {
           </Style.HomeContactFrom>
         </Col>
       </Row>
-    </HomeSectionWrapper>
+    </SectionWrapper>
   );
 };
 

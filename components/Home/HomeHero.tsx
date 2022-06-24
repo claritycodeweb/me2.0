@@ -6,35 +6,9 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import avatar from './avatar.png';
 import { FaAngleDown } from 'react-icons/fa';
+import { HeroParalax } from '@styles/common.styles';
 
 interface IProps {}
-
-const HeroParalax = styled.div`
-  position: relative;
-  background-image: url(hero.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  height: 80vh;
-  width: 100%;
-  margin-bottom: 3rem;
-  &:before {
-    content: '';
-    position: absolute;
-    background-image: linear-gradient(transparent 30%, rgb(34, 34, 34) 90%);
-    background-color: rgba(0, 0, 0, 0.4);
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    z-index: 0;
-  }
-
-  ${({ theme }) => theme.breakpoints.down('desktop')`
-    background-attachment: scroll;
-  `}
-`;
 
 const HeroText = styled.div`
   max-width: 1200px;
@@ -151,7 +125,6 @@ const ScrollButton = styled(MainButton)`
 `;
 
 const Style = {
-  HeroParalax,
   HeroText,
   HeroInfo,
   HeroQuote,
@@ -166,7 +139,7 @@ const HomeHero = ({}: IProps) => {
     });
   };
   return (
-    <Style.HeroParalax>
+    <HeroParalax bgUrl="hero.jpg" height={'80vh'}>
       <Container>
         <Style.HeroText>
           <Style.HeroInfo>
@@ -191,7 +164,7 @@ const HomeHero = ({}: IProps) => {
       <ScrollButton onClick={scroll}>
         <FaAngleDown size={25} />
       </ScrollButton>
-    </Style.HeroParalax>
+    </HeroParalax>
   );
 };
 

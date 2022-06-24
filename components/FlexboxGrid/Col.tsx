@@ -11,7 +11,9 @@ function isOfTypeBreakpoint(keyInput: string): keyInput is Breakpoint {
   return Object.keys(breakpoints).includes(keyInput);
 }
 
-const StyledCol = styled.div<PartialRecord<Breakpoint, number>>`
+const StyledCol = styled.div<
+  PartialRecord<Breakpoint, number> & { base?: number }
+>`
   box-sizing: border-box;
   flex: 0 0 auto;
   flex-grow: 1;
@@ -30,10 +32,19 @@ const StyledCol = styled.div<PartialRecord<Breakpoint, number>>`
         `;
       });
   }}
+
+  ${({ theme, base }) =>
+    base &&
+    theme.breakpoints.up('desktop')`
+         max-width: ${((base || 12) / 12) * 100}%;
+         flex-basis: ${((base || 12) / 12) * 100}%;
+  `}
 `;
 
 interface IProps extends PartialRecord<Breakpoint, number> {
   children?: React.ReactNode;
+  base?: number;
+  style?: React.CSSProperties;
 }
 
 const Col = ({ children, ...rest }: IProps) => {
