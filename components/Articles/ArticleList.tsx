@@ -16,7 +16,7 @@ const ArticleList = ({ articles }: IProps) => {
         {articles.map((article) => {
           return (
             <Col base={6} desktop={6} mobile={12} key={article.id}>
-              <Link href={`/articles/${article.pathname},${article.id}`}>
+              <Link href={`/articles/${article.pathname}`}>
                 <a>
                   <ArticleCard article={article} />
                 </a>

@@ -7,7 +7,7 @@ const SectionWrapper = styled.section`
 
 const HeroParalax = styled.div<{ bgUrl: string; height: string }>`
   position: relative;
-  background-image: url(${({ bgUrl }) => bgUrl});
+  background-image: url(${({ bgUrl }) => `${bgUrl}`});
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

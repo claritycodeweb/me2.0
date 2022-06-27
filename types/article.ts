@@ -6,7 +6,7 @@ export interface IResource {
 export interface IArticle {
   id: number;
   mainCategory: string;
-  subCategory: string[];
+  tags: string[];
   pathname: string;
   title: string;
   description: string;

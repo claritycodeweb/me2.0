@@ -14,7 +14,7 @@ Example code behind shows how to make the same function in old (ES5 way) and usi
 
 ```js
 //ES5
-var multiply1 = function(x1, x2) {
+var multiply1 = function (x1, x2) {
   return x1 * x2;
 };
 
@@ -30,18 +30,18 @@ var cars = [
   { class: 'van', year: 2010, brand: 'volvo' },
   { class: 'lmuzine', year: 2009, brand: 'bmw' },
   { class: 'hatchback', year: 2015, brand: 'renault' },
-  { class: 'hatchback', year: 2008, brand: 'kia' }
+  { class: 'hatchback', year: 2008, brand: 'kia' },
 ];
 //es5 (old way)
 let filter = cars
-  .filter(function(car) {
+  .filter(function (car) {
     return car.class == 'hatchback'; //looking for hatchback
   })
-  .filter(function(car) {
+  .filter(function (car) {
     //not older than 2010
     return car.year > 2010;
   })
-  .map(function(car) {
+  .map(function (car) {
     //return only the brand
     return car.brand;
   });
@@ -59,14 +59,14 @@ Let's do this with arrow. We can removing function keyword and add fat arrow => 
 
 ```js
 let filter = cars
-  .filter(car => {
+  .filter((car) => {
     return car.class == 'hatchback'; //looking for hatchback
   })
-  .filter(car => {
+  .filter((car) => {
     //not older than 2010
     return car.year > 2010;
   })
-  .map(car => {
+  .map((car) => {
     //return only the brand
     return car.brand;
   });
@@ -78,9 +78,9 @@ The result is of course the same. But we can do this better. If your code is one
 
 ```js
 let filter = cars
-  .filter(car => car.class == 'hatchback')
-  .filter(car => car.year > 2010)
-  .map(car => car.brand);
+  .filter((car) => car.class == 'hatchback')
+  .filter((car) => car.year > 2010)
+  .map((car) => car.brand);
 ```
 
 When there is only one argument for an arrow function you don't need to add parentheses around those arguments. If you are passing more than one arguments then the parentheses must be include.
@@ -102,8 +102,8 @@ It's global window in this case. Lets' try another example using object literals
 var obj = {
   table: [1, 2, 3],
   method: () => {
-    return this.table.filter(m => m == 1);
-  }
+    return this.table.filter((m) => m == 1);
+  },
 };
 console.log(obj.method());
 //TypeError: Cannot read property 'filter' of undefined
@@ -131,7 +131,7 @@ Instead of using shorter syntax method in this cases you should stay with old fu
 function Test(name) {
   this.name = name;
 }
-Test.prototype.getName = function() {
+Test.prototype.getName = function () {
   return this.name;
 };
 var obj1 = new Test('Rafal');

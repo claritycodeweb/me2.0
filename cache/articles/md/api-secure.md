@@ -56,7 +56,7 @@ then define the middleware with configuration:
 ```js
 const rateLimiter = rateLimit({
   windowMs: 30 * 1000, // 30sec,
-  max: 10 // limit each ip to 10 request per window
+  max: 10, // limit each ip to 10 request per window
 });
 ```
 
@@ -76,7 +76,7 @@ define the middleware with configuration:
 const speedLimiter = slowDown({
   windowMs: 30 * 1000, // 30 sec
   delayAfter: 10, // allow 10 requests per 30 minutes, then...
-  delayMs: 500 // begin adding 500ms of delay per request above 10:
+  delayMs: 500, // begin adding 500ms of delay per request above 10:
   // request # 11 is delayed by  500ms
   // request # 12 is delayed by 1000ms
   // request # 13 is delayed by 1500ms
@@ -117,7 +117,7 @@ router.get('/', apiKeyLimiter, rateLimiter, speedLimiter, async (req, res, next)
 
 <h2 id="Conclusion">Conclusion</h2>
 
-First way of protecting api instead of hitting api all the time is to cache it in memory. Next step is rate-limiting where you should say how many request you want to allow to given IP address per time window and. Slowing down is similar technique to prevent endpoint from too many request at the same time form a given IP address. 
+First way of protecting api instead of hitting api all the time is to cache it in memory. Next step is rate-limiting where you should say how many request you want to allow to given IP address per time window and. Slowing down is similar technique to prevent endpoint from too many request at the same time form a given IP address.
 
 We have couple of protection levels:
 

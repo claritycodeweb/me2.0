@@ -22,11 +22,12 @@ const Span = styled.span`
 const MainLink = ({
   children,
   href,
+  className,
 }: PropsWithChildren<{ href: string; className?: string }>) => {
   return (
     <Link href={href}>
       <a>
-        <Span>{children}</Span>
+        <Span className={className}>{children}</Span>
       </a>
     </Link>
   );

@@ -34,7 +34,7 @@ const HomeBlog = ({}: IProps) => {
           {articles?.slice(0, 2).map((article) => {
             return (
               <Col mobile={12} key={article.id}>
-                <Link href={`/articles/${article.pathname},${article.id}`}>
+                <Link href={`/articles/${article.pathname}`}>
                   <a>
                     <ArticleCard article={article} />
                   </a>

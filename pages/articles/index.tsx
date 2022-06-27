@@ -4,7 +4,7 @@ import { IArticle } from 'types/article';
 import MainLayout from '@components/Layouts/MainLayout';
 import Container from '@styles/container.style';
 import ArticleList from '@components/Articles/ArticleList';
-import ArticleHero from '@components/Articles/ArticleHero';
+import ArticlesHero from '@components/Articles/ArticlesHero';
 
 interface IProps {
   articles: IArticle[];
@@ -13,7 +13,7 @@ interface IProps {
 const ArticlesIndex = ({ articles }: IProps) => {
   return (
     <MainLayout>
-      <ArticleHero />
+      <ArticlesHero />
       <Container>
         <ArticleList articles={articles} />
       </Container>

@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 import 'react-toastify/dist/ReactToastify.css';
 import { lighten } from 'polished';
+import 'highlight.js/styles/vs2015.css';
 
 const GlobalStyles = createGlobalStyle`
   ${normalize}
@@ -52,16 +53,6 @@ const GlobalStyles = createGlobalStyle`
     opacity: 0.9;
   }
 
-  .main {
-    min-height: 100vh;
-    padding: 4rem 2rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-  }
 
   h1, h2, h3 { 
     margin: 0;

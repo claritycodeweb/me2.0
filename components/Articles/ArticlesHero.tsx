@@ -4,7 +4,9 @@ import Container from '@styles/container.style';
 import React from 'react';
 import styled from 'styled-components';
 
-interface IProps {}
+interface IProps {
+  bgUrl?: string;
+}
 
 const HeroText = styled(Container)`
   position: relative;
@@ -56,9 +58,9 @@ const Style = {
   HeroInfo,
 };
 
-const ArticleHero = ({}: IProps) => {
+const ArticlesHero = ({ bgUrl }: IProps) => {
   return (
-    <HeroParalax bgUrl={'hero1.jpg'} height={'40vh'}>
+    <HeroParalax bgUrl={bgUrl || '/hero1.jpg'} height={'40vh'}>
       <Style.HeroText>
         <Style.HeroInfo>
           <h1>Latest posts about coding stuff</h1>
@@ -71,4 +73,4 @@ const ArticleHero = ({}: IProps) => {
   );
 };
 
-export default ArticleHero;
+export default ArticlesHero;

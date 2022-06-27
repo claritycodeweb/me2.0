@@ -86,8 +86,8 @@ const ArticleCard = ({ article }: { article: IArticle }) => {
         />
         <Style.Article.PublishDate>
           <FaCalendarAlt />
-          Published: {months[publishAt.getMonth()].slice(0, 3)},{' '}
-          {publishAt.getFullYear()}
+          Published: {months[publishAt.getMonth()].slice(0, 3)}{' '}
+          {publishAt.getDate()}, {publishAt.getFullYear()}
         </Style.Article.PublishDate>
       </Style.Article.Img>
       <Style.Article.Info>
