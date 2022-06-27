@@ -139,7 +139,7 @@ const HomeHero = ({}: IProps) => {
     });
   };
   return (
-    <HeroParalax bgUrl="hero.jpg" height={'80vh'}>
+    <HeroParalax bgUrl="/hero.jpg" height={'80vh'}>
       <Container>
         <Style.HeroText>
           <Style.HeroInfo>
