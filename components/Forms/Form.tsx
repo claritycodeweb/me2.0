@@ -30,7 +30,8 @@ const Form = styled.form`
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5),
         0px 1px 6px rgba(0, 0, 0, 0.25), white;
     }
-    box-shadow: 0px 2px 4px rgb(0 0 0 / 50%), 0px 1px 6px rgb(0 0 0 / 25%);
+    // box-shadow: 0px 2px 4px rgb(0 0 0 / 50%), 0px 1px 6px rgb(0 0 0 / 25%);
+    border: 1px solid #2e2e2e;
   }
   textarea {
     min-height: 20rem;
