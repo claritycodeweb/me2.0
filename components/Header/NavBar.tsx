@@ -1,4 +1,5 @@
 import Container from '@styles/container.style';
+import Link from 'next/link';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -77,19 +78,19 @@ const NavBar = ({ open }: IProps) => {
         <nav>
           <ul>
             <li>
-              <a href="#">Home</a>
+              <Link href="/#">Home</Link>
             </li>
             <li>
-              <a href="#home-about">About</a>
+              <Link href="/#home-about">About</Link>
             </li>
             <li>
-              <a href="#home-experience">Experience</a>
+              <Link href="/#home-experience">Experience</Link>
             </li>
             <li>
-              <a href="#home-blog">Blog</a>
+              <Link href="/#home-blog">Blog</Link>
             </li>
             <li>
-              <a href="#home-contact">Contact</a>
+              <Link href="/#home-contact">Contact</Link>
             </li>
           </ul>
         </nav>
