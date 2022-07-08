@@ -1,14 +1,16 @@
 import { Row, Col } from '@components/FlexboxGrid';
 import {
+  fadeIn,
   HomeSectionHeader,
   HomeSectionSubHeader,
   SectionWrapper,
 } from '@styles/common.styles';
 import Image from 'next/image';
 import { lighten } from 'polished';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import months from 'utils/months';
+import pinRef from 'utils/pinRef';
 
 import cl from './company-logos/cl.jpeg';
 import lm from './company-logos/lm.jpeg';
@@ -35,7 +37,6 @@ const Item = styled.a`
   padding: 2rem;
   gap: 1rem;
   min-height: 190px;
-  transition: all 1s;
   @media (hover: hover) {
     &:hover {
       h2 {
@@ -51,6 +52,8 @@ const Item = styled.a`
   ${({ theme }) => theme.breakpoints.down('mobile')`
     min-height: 130px;
   `}
+  ${fadeIn}
+  transition: all 1s;
 `;
 
 const ItemMediaBody = styled.div`
@@ -147,7 +150,34 @@ const date = (startDate: Date, endDate: Date) => {
   return `${startMonth}, ${startYear} - ${endMonth}, ${endYear}`;
 };
 
+export type Ref = HTMLDivElement;
+
 const HomeExperience = ({}: IProps) => {
+  const refs = useRef(new Array<HTMLDivElement>());
+
+  /*
+    TODO: to refactor 
+  */
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (enteries) => {
+        enteries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+          entry.target.classList.add('fade-appear');
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    for (const ref of refs.current) {
+      observer.observe(ref);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <SectionWrapper id="home-experience">
       <Row>
@@ -162,6 +192,7 @@ const HomeExperience = ({}: IProps) => {
         {items.map((item) => (
           <Col key={item.id}>
             <Style.Item
+              ref={(element) => pinRef(refs, element)}
               href={item.href}
               target="_blank"
               rel="noreferrer"

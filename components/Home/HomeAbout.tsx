@@ -1,13 +1,15 @@
 import MainButton from '@components/Buttons/MainButton';
 import { Row, Col } from '@components/FlexboxGrid';
 import {
+  fadeIn,
   HomeSectionHeader,
   HomeSectionSubHeader,
   SectionWrapper,
 } from '@styles/common.styles';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import pinRef from 'utils/pinRef';
 import me from './me.jpg';
 
 interface IProps {}
@@ -34,12 +36,13 @@ const Item = styled.div`
       text-transform: uppercase;
     }
   }
-  transition: all 0.5s;
   @media (hover: hover) {
     &:hover {
       transform: translateY(-1rem) scale(1.02);
     }
   }
+  ${fadeIn}
+  transition: all 0.5s;
 `;
 
 const HomeMeInfoSection = styled.div`
@@ -51,6 +54,7 @@ const HomeMeInfoSection = styled.div`
     padding-bottom: 1.5rem;
     font-size: 1.6rem;
   }
+  ${fadeIn}
 `;
 
 const HomeMeImageSection = styled.div`
@@ -76,6 +80,7 @@ const HomeMeImageSection = styled.div`
       border-radius: 4px;
     }
   }
+  ${fadeIn}
 `;
 
 const Style = {
@@ -84,7 +89,11 @@ const Style = {
   Item,
 };
 
+export type Ref = HTMLDivElement;
+
 const HomeAbout = ({}: IProps) => {
+  const refs = useRef(new Array<HTMLDivElement>());
+
   const hireMe = () => {
     const emailTo = 'rafalpisarczyk@gmail.com';
     const emailSub = 'Hire Rafał';
@@ -94,11 +103,35 @@ const HomeAbout = ({}: IProps) => {
       '_self'
     );
   };
+
+  /*
+    TODO: to refactor create wrapper componet to use single instance of observer and keep visibility in state 
+  */
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (enteries) => {
+        enteries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+          entry.target.classList.add('fade-appear');
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    for (const ref of refs.current) {
+      observer.observe(ref);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <SectionWrapper id="home-about">
       <Row>
         <Col>
-          <Style.Item>
+          <Style.Item ref={(element) => pinRef(refs, element)}>
             <p>11</p>
             <p>
               Years<br></br> Experience
@@ -106,7 +139,7 @@ const HomeAbout = ({}: IProps) => {
           </Style.Item>
         </Col>
         <Col>
-          <Style.Item>
+          <Style.Item ref={(element) => pinRef(refs, element)}>
             <p>100+</p>
             <p>
               Completed <br></br> Projects
@@ -114,7 +147,7 @@ const HomeAbout = ({}: IProps) => {
           </Style.Item>
         </Col>
         <Col>
-          <Style.Item>
+          <Style.Item ref={(element) => pinRef(refs, element)}>
             <p>100%</p>
             <p>
               Happy<br></br> EMPLOYERS
@@ -124,7 +157,7 @@ const HomeAbout = ({}: IProps) => {
       </Row>
       <Row>
         <Col tablet={12}>
-          <Style.HomeMeInfoSection>
+          <Style.HomeMeInfoSection ref={(element) => pinRef(refs, element)}>
             <HomeSectionHeader>About Me</HomeSectionHeader>
             <HomeSectionSubHeader>
               Full-Stack Web Developer
@@ -149,7 +182,7 @@ const HomeAbout = ({}: IProps) => {
           </Style.HomeMeInfoSection>
         </Col>
         <Col tablet={12}>
-          <Style.HomeMeImageSection>
+          <Style.HomeMeImageSection ref={(element) => pinRef(refs, element)}>
             <Image src={me} alt="Rafał Pisarczyk" width="200" height="200" />
             <p>
               <MainButton onClick={hireMe}>Hire Me</MainButton>

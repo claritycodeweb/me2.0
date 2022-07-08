@@ -76,6 +76,9 @@ const GlobalStyles = createGlobalStyle`
 
     ${({ theme }) => theme.mixins.fontSize({ tablet: 2.0 })}
   }
+  .fade-appear {
+     opacity: 1 !important;
+  }
 `;
 
 export default GlobalStyles;

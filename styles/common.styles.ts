@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const SectionWrapper = styled.section`
   margin: 10rem 0;
@@ -46,4 +46,20 @@ const HomeSectionSubHeader = styled.h5`
   font-size: 1.6rem;
 `;
 
-export { SectionWrapper, HomeSectionHeader, HomeSectionSubHeader, HeroParalax };
+const fadeIn = css`
+  opacity: 0;
+  transition: opacity 1000ms ease-in;
+`;
+
+const fadeAppear = css`
+  opacity: 1;
+`;
+
+export {
+  SectionWrapper,
+  HomeSectionHeader,
+  HomeSectionSubHeader,
+  HeroParalax,
+  fadeIn,
+  fadeAppear,
+};
