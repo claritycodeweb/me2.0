@@ -125,7 +125,6 @@ const workTime = (startDate: Date, endDate: Date) => {
     (endDate.getFullYear() - startDate.getFullYear()) * 12 +
     (endDate.getMonth() - startDate.getMonth() - 1);
 
-  console.log('diffMonths', diffMonths);
   const diffYears = Math.floor(diffMonths / 12);
   const months = diffMonths % 12;
 
