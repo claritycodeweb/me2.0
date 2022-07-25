@@ -33,7 +33,7 @@ const Item = styled.a`
   color: ${({ theme }) => theme.palette.background.default};
   ${({ theme }) => theme.mixins.fontSize({ desktop: 1.4 })}
   box-shadow: rgb(0 0 0 / 50%) 0px 2px 4px, rgb(0 0 0 / 25%) 0px 1px 6px;
-  border-radius: 5px;
+  border-radius: 1px;
   padding: 2rem;
   gap: 1rem;
   min-height: 190px;
@@ -125,6 +125,7 @@ const workTime = (startDate: Date, endDate: Date) => {
     (endDate.getFullYear() - startDate.getFullYear()) * 12 +
     (endDate.getMonth() - startDate.getMonth() - 1);
 
+  console.log('diffMonths', diffMonths);
   const diffYears = Math.floor(diffMonths / 12);
   const months = diffMonths % 12;
 
@@ -134,6 +135,9 @@ const workTime = (startDate: Date, endDate: Date) => {
     }
     if (months > 1) {
       return `${diffYears} year, ${months} Month`;
+    }
+    if (months === 0) {
+      return `${diffYears} years`;
     }
   }
   return `${months} Month`;
