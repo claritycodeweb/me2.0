@@ -46,7 +46,7 @@ const MdContent = styled.div`
     /* background-color: #efe9e9; */
     text-shadow: rgba(0, 0, 0, 0.3) 0px 1px;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    font-size: 0.9rem;
+    font-size: 1.4rem;
   }
 
   blockquote {
@@ -71,6 +71,12 @@ const MdContent = styled.div`
   }
   ol {
     list-style: inside;
+    padding-top: 1em;
+    > li {
+      > p {
+        display: inline;
+      }
+    }
   }
 
   code {

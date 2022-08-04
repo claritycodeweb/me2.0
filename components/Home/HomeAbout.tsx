@@ -132,7 +132,7 @@ const HomeAbout = ({}: IProps) => {
       <Row>
         <Col>
           <Style.Item ref={(element) => pinRef(refs, element)}>
-            <p>11</p>
+            <p>{new Date().getFullYear() - 2011}</p>
             <p>
               Years<br></br> Experience
             </p>
