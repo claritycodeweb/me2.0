@@ -129,7 +129,7 @@ const workTime = (startDate: Date, endDate: Date) => {
   const months = diffMonths % 12;
 
   if (diffYears) {
-    if (diffYears > 1 && months > 1) {
+    if (diffYears > 1 && months >= 1) {
       return `${diffYears} years, ${months} Month`;
     }
     if (months > 1) {
