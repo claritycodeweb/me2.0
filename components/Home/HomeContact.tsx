@@ -14,7 +14,7 @@ const HomeContactInfoList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin: 0 -1.5rem;
+  padding-bottom: 4rem;
 `;
 
 const HomeInfoItem = styled.div`
@@ -30,7 +30,6 @@ const HomeInfoItem = styled.div`
 `;
 
 const HomeContactFrom = styled.div`
-  margin: 0 -1.5rem;
   button {
     border-radius: 3px;
   }

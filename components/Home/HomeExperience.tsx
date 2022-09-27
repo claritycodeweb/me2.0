@@ -73,6 +73,10 @@ const ItemMediaBody = styled.div`
   }
 `;
 
+const RowStyled = styled(Row)`
+  gap: 1.5rem;
+`;
+
 const Style = { Item, ItemMediaBody, ItemImageWrapper };
 
 const items = [
@@ -191,7 +195,7 @@ const HomeExperience = ({}: IProps) => {
           </HomeSectionSubHeader>
         </Col>
       </Row>
-      <Row column>
+      <RowStyled column>
         {items.map((item) => (
           <Col key={item.id}>
             <Style.Item
@@ -220,7 +224,7 @@ const HomeExperience = ({}: IProps) => {
             </Style.Item>
           </Col>
         ))}
-      </Row>
+      </RowStyled>
     </SectionWrapper>
   );
 };

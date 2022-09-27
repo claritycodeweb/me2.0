@@ -16,9 +16,6 @@ const HeaderWrapper = styled.section<{ isSticky: boolean }>`
       width: 100%;
       animation: ${slide} 0.8s;
       font-size: 1.2rem;
-      ${HeaderMain} {
-        padding: 1.5rem 2rem;
-      }
     `};
 `;
 

@@ -83,6 +83,10 @@ const HomeMeImageSection = styled.div`
   ${fadeIn}
 `;
 
+const RowStyled = styled(Row)`
+  gap: 1.5rem;
+`;
+
 const Style = {
   HomeMeInfoSection,
   HomeMeImageSection,
@@ -129,7 +133,7 @@ const HomeAbout = ({}: IProps) => {
 
   return (
     <SectionWrapper id="home-about">
-      <Row>
+      <RowStyled>
         <Col>
           <Style.Item ref={(element) => pinRef(refs, element)}>
             <p>{new Date().getFullYear() - 2011}</p>
@@ -154,7 +158,7 @@ const HomeAbout = ({}: IProps) => {
             </p>
           </Style.Item>
         </Col>
-      </Row>
+      </RowStyled>
       <Row>
         <Col tablet={12}>
           <Style.HomeMeInfoSection ref={(element) => pinRef(refs, element)}>

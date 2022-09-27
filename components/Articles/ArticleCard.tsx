@@ -33,7 +33,8 @@ const Img = styled.div`
   }
 `;
 
-const Info = styled.div`
+const Content = styled.div`
+  z-index: 1;
   padding: 1.5rem;
   > h2 {
     padding-bottom: 2rem;
@@ -67,7 +68,7 @@ const Style = {
   Article: {
     Wrapper: ArticleWrapper,
     Img: Img,
-    Info: Info,
+    Content: Content,
     PublishDate: PublishDate,
   },
 };
@@ -90,10 +91,10 @@ const ArticleCard = ({ article }: { article: IArticle }) => {
           {publishAt.getDate()}, {publishAt.getFullYear()}
         </Style.Article.PublishDate>
       </Style.Article.Img>
-      <Style.Article.Info>
+      <Style.Article.Content>
         <h2>{article.title}</h2>
         <p>{article.description}</p>
-      </Style.Article.Info>
+      </Style.Article.Content>
     </Style.Article.Wrapper>
   );
 };

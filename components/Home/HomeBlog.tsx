@@ -1,4 +1,5 @@
 import { Col, Row } from '@components/FlexboxGrid';
+import styled from 'styled-components';
 import {
   HomeSectionHeader,
   HomeSectionSubHeader,
@@ -6,13 +7,18 @@ import {
 } from '@styles/common.styles';
 import React from 'react';
 import { IArticle } from 'types/article';
-import Link from 'next/link';
 import useFetch from '@hooks/use-fetch';
 import Loading from '@components/Loaders/Loading';
-import ArticleCard from '@components/Articles/ArticleCard';
 import MainLink from '@components/Links/MainLink';
+import ArticleCardGrid from '@components/Articles/ArticleCardGrid';
 
 interface IProps {}
+
+const Grid = styled(Row)`
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+`;
 
 const HomeBlog = ({}: IProps) => {
   const { data: articles, error } = useFetch<IArticle[]>({
@@ -29,21 +35,19 @@ const HomeBlog = ({}: IProps) => {
           </HomeSectionSubHeader>
         </Col>
       </Row>
-      <Row>
+      <Grid>
         <Loading isLoading={!articles} error={error}>
-          {articles?.slice(0, 2).map((article) => {
+          {articles?.slice(0, 5).map((article, index) => {
             return (
-              <Col mobile={12} key={article.id}>
-                <Link href={`/articles/${article.pathname}`}>
-                  <a>
-                    <ArticleCard article={article} />
-                  </a>
-                </Link>
-              </Col>
+              <ArticleCardGrid
+                key={article.id}
+                article={article}
+                featured={index === 0}
+              />
             );
           })}
         </Loading>
-      </Row>
+      </Grid>
       <Row>
         <Col style={{ textAlign: 'center', paddingTop: '5rem' }}>
           <MainLink href={`/articles`}>See all articels</MainLink>

@@ -18,7 +18,6 @@ export const Row = styled.div<RowType>`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
   ${(p) =>
     p.column &&
     css`

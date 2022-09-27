@@ -20,7 +20,7 @@ const StyledCol = styled.div<
   flex-basis: 0;
   max-width: 100%;
   display: block;
-  padding: 1.5rem;
+  // padding: 1.5rem;
 
   ${({ theme, ...rest }) => {
     return Object.keys(rest)

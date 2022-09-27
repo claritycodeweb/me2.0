@@ -45,6 +45,7 @@ const FooterSocialIcons = styled.ul`
   display: flex;
   justify-content: flex-start;
   gap: 2rem;
+  margin-bottom: 2.5rem;
   a {
     color: white;
     background: rgb(102, 102, 102);
