@@ -13,6 +13,7 @@ type RowType = {
   first?: boolean;
   last?: boolean;
   column?: boolean;
+  margin?: string;
 };
 export const Row = styled.div<RowType>`
   display: flex;
@@ -77,5 +78,11 @@ export const Row = styled.div<RowType>`
     p.last &&
     css`
       order: 1;
+    `}
+
+  ${(p) =>
+    p.margin &&
+    css`
+      margin: ${p.margin};
     `}
 `;

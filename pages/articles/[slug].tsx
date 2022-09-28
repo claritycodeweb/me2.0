@@ -104,11 +104,11 @@ const ArticlePage = ({ content, frontmatter }: IProps) => {
         date={frontmatter.date}
       />
       <Container>
-        <Row>
-          <Col base={8}>
+        <Row margin={'-1rem'}>
+          <Col base={8} style={{ padding: '1rem' }}>
             <MdContent dangerouslySetInnerHTML={{ __html: marked(content) }} />
           </Col>
-          <Col base={4}>
+          <Col base={4} style={{ padding: '1rem' }}>
             <StickyContainer>
               <ArticleTableOfContents content={content} />
               <ArticleTags tags={frontmatter.tags} />

@@ -35,6 +35,8 @@ const HomeContactFrom = styled.div`
   }
 `;
 
+const RowStyled = styled(Row)``;
+
 const Style = {
   HomeContactInfoList,
   HomeContactFrom,
@@ -94,8 +96,8 @@ const HomeContact = ({}: IProps) => {
                 });
               }}
             >
-              <Row>
-                <Col>
+              <RowStyled>
+                <Col base={6}>
                   <input
                     type="text"
                     placeholder="Your name*"
@@ -105,7 +107,7 @@ const HomeContact = ({}: IProps) => {
                     required
                   />
                 </Col>
-                <Col>
+                <Col base={6}>
                   <input
                     type="email"
                     placeholder="Your Email*"
@@ -115,9 +117,7 @@ const HomeContact = ({}: IProps) => {
                     required
                   />
                 </Col>
-              </Row>
-              <Row>
-                <Col>
+                <Col base={6}>
                   <input
                     type="text"
                     placeholder="Subject*"
@@ -127,7 +127,7 @@ const HomeContact = ({}: IProps) => {
                     required
                   />
                 </Col>
-                <Col>
+                <Col base={6}>
                   <input
                     type="text"
                     placeholder="Phone*"
@@ -137,9 +137,7 @@ const HomeContact = ({}: IProps) => {
                     required
                   />
                 </Col>
-              </Row>
-              <Row>
-                <Col>
+                <Col base={12}>
                   <textarea
                     name="message"
                     id="message"
@@ -150,7 +148,7 @@ const HomeContact = ({}: IProps) => {
                     placeholder="Your Message ..."
                   />
                 </Col>
-              </Row>
+              </RowStyled>
               <Row>
                 <Col>
                   <MainButton type="submit">Send</MainButton>
