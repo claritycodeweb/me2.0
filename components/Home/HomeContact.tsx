@@ -97,7 +97,7 @@ const HomeContact = ({}: IProps) => {
               }}
             >
               <RowStyled>
-                <Col base={6}>
+                <Col base={6} desktop={6}>
                   <input
                     type="text"
                     placeholder="Your name*"
@@ -107,7 +107,7 @@ const HomeContact = ({}: IProps) => {
                     required
                   />
                 </Col>
-                <Col base={6}>
+                <Col base={6} desktop={6}>
                   <input
                     type="email"
                     placeholder="Your Email*"
@@ -117,7 +117,7 @@ const HomeContact = ({}: IProps) => {
                     required
                   />
                 </Col>
-                <Col base={6}>
+                <Col base={6} desktop={6}>
                   <input
                     type="text"
                     placeholder="Subject*"
@@ -127,7 +127,7 @@ const HomeContact = ({}: IProps) => {
                     required
                   />
                 </Col>
-                <Col base={6}>
+                <Col base={6} desktop={6}>
                   <input
                     type="text"
                     placeholder="Phone*"
@@ -137,7 +137,7 @@ const HomeContact = ({}: IProps) => {
                     required
                   />
                 </Col>
-                <Col base={12}>
+                <Col base={12} desktop={12}>
                   <textarea
                     name="message"
                     id="message"
@@ -149,7 +149,7 @@ const HomeContact = ({}: IProps) => {
                   />
                 </Col>
               </RowStyled>
-              <Row>
+              <Row margin={'1rem 0 1rem 0'}>
                 <Col>
                   <MainButton type="submit">Send</MainButton>
                 </Col>
