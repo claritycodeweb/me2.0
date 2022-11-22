@@ -65,8 +65,6 @@ const items: IExperience[] = [
 
     - Built API following RESTfull standards
 
-    - Programming work on both front and back-end sides
-
     - Active participation in the development of the project both from the programming and UX/UI side, architecture and functionality
 
     - Helping to make key business and technical decision 
