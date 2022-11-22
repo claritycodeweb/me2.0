@@ -43,6 +43,8 @@ const items: IExperience[] = [
 
       - Helping to make key business and technical decision 
 
+      - Built API following RESTfull standards
+
       <p style="color: rgba(255,255,255, 0.8);">Tech: JS, ReactJS, React Native, Redux, Next.js Context API, Typescript, Node.js, MSSQL, Docker, Kubernates, Terraform, Git, HTML, CSS, SASS, Apollo, Jest</p>
     `,
     href: 'https://www.linkedin.com/company/classeek/',
@@ -77,7 +79,7 @@ const items: IExperience[] = [
   },
   {
     id: 3,
-    headline: 'Software Engineer',
+    headline: 'Regular Software Engineer',
     logo: stp,
     startTime: new Date('2014-06-01'),
     endTime: new Date('2017-12-01'),

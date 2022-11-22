@@ -179,8 +179,8 @@ const HomeAbout = ({}: IProps) => {
               node.js/javascript/asp.net projects, where my experience and my
               deep understanding of architecture and theory is most impactful.
             </p>
-            <p>Polish - native</p>
-            <p>
+            <p style={{ color: 'gray', fontSize: '1.4rem' }}>Polish - native</p>
+            <p style={{ color: 'gray', fontSize: '1.4rem' }}>
               English - professional working proficiency, permanent practice
             </p>
           </Style.HomeMeInfoSection>
