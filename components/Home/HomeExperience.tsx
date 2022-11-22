@@ -1,106 +1,76 @@
 import { Row, Col } from '@components/FlexboxGrid';
 import {
-  fadeIn,
   HomeSectionHeader,
   HomeSectionSubHeader,
   SectionWrapper,
 } from '@styles/common.styles';
-import Image from 'next/image';
-import { lighten } from 'polished';
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import months from 'utils/months';
 import pinRef from 'utils/pinRef';
 
 import cl from './company-logos/cl.jpeg';
 import lm from './company-logos/lm.jpeg';
 import qm from './company-logos/qm.jpeg';
 import stp from './company-logos/stp.jpeg';
+import HomeExperienceItem, { IExperience } from './HomeExperienceItem';
 
 interface IProps {}
 
-const ItemImageWrapper = styled.div`
-  flex: 1;
-  text-align: center;
-  filter: grayscale(1);
-`;
-
-const Item = styled.a`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  color: ${({ theme }) => theme.palette.background.default};
-  ${({ theme }) => theme.mixins.fontSize({ desktop: 1.4 })}
-  box-shadow: rgb(0 0 0 / 50%) 0px 2px 4px, rgb(0 0 0 / 25%) 0px 1px 6px;
-  border-radius: 1px;
-  padding: 2rem;
-  gap: 1rem;
-  min-height: 190px;
-  @media (hover: hover) {
-    &:hover {
-      h2 {
-        transition: all 1s;
-        color: ${({ theme }) => theme.palette.accent.primary};
-      }
-      transform: translateX(1.5rem);
-      ${ItemImageWrapper} {
-        filter: none;
-      }
-    }
-  }
-  ${({ theme }) => theme.breakpoints.down('mobile')`
-    min-height: 130px;
-  `}
-  ${fadeIn}
-  transition: all 1s;
-`;
-
-const ItemMediaBody = styled.div`
-  flex: 4;
-  > * {
-    padding-bottom: 0.5rem;
-    line-height: 2.4rem;
-  }
-  h5 {
-    color: ${({ theme }) =>
-      lighten(0.3, theme.palette.border.primary as string)};
-  }
-  > p {
-    ${({ theme }) => theme.breakpoints.down('mobile')`
-      display: none;  
-   `}
+const RowExperience = styled.div`
+  > * + * {
+    margin-top: 5rem;
   }
 `;
 
-const RowStyled = styled(Row)`
-  gap: 1.5rem;
-`;
+const Style = { RowExperience };
 
-const Style = { Item, ItemMediaBody, ItemImageWrapper };
-
-const items = [
+const items: IExperience[] = [
   {
     id: 1,
     headline: 'Senior Full-Stack Developer (Tech leader)',
     logo: cl,
-    start: 'June, 2020',
-    end: 'Present',
     startTime: new Date('2020-06-01'),
     endTime: new Date(),
-    body: 'Classeek is leveraging technology in order to sustainably support classical music as a constantly evolving genre and to improve efficiencies and the method through which young artists are discovered and presented.',
+    body: `
+      - Led and managed a frontend developers and designers team to create efficient, effective and visually aesthetic websites and mobile apps
+
+      - Active participation in the development of the project both from the programming and UX/UI side, architecture and functionality
+
+      - Helping to make key business and technical decision 
+
+      <p style="color: rgba(255,255,255, 0.8);">Tech: JS, ReactJS, React Native, Redux, Next.js Context API, Typescript, Node.js, MSSQL, Docker, Kubernates, Terraform, Git, HTML, CSS, SASS, Apollo, Jest</p>
+    `,
     href: 'https://www.linkedin.com/company/classeek/',
+    companyName: 'Classeek',
   },
   {
     id: 2,
     headline: 'Senior Full-Stack Developer',
     logo: lm,
-    start: 'January, 2018',
-    end: 'November, 2021',
     startTime: new Date('2018-01-01'),
     endTime: new Date('2021-11-01'),
-    body: 'Simplify the real estate journey for individuals and provide real estate professionals with the ultimate tool for automating and optimizing client prospection.',
+    body: `
+    - Led and managed a frontend developers and designers team to create efficient, effective and visually aesthetic websites
+
+    - Coached 3 juniors frontend developer
+
+    - Developed applications using React with managing the state throught Redux and Context API
+
+    - Created a mobile responsive User Experiences with CSS/SCSS Flexbox thats allow cross-platform accessibility to the website
+
+    - Built API following RESTfull standards
+
+    - Programming work on both front and back-end sides
+
+    - Active participation in the development of the project both from the programming and UX/UI side, architecture and functionality
+
+    - Helping to make key business and technical decision 
+
+    <p style="color: rgba(255,255,255, 0.8);">Tech: JS, ReactJS,  Redux, GraphQL, Typescript, Node.js, MSSQL, Docker, Swarn, Sketch, Git, HTML, CSS, SASS, Apollo, .netcore, C#, entity-framework, Jest</p>
+
+    `,
     href: 'https://www.linkedin.com/company/lookmove/',
+    companyName: 'Lookmove',
   },
   {
     id: 3,
@@ -108,54 +78,36 @@ const items = [
     logo: stp,
     startTime: new Date('2014-06-01'),
     endTime: new Date('2017-12-01'),
-    body: 'SimpHigh quality software development for a family of digital consumer brands. For passionate engineers!',
+    body: `
+     - Translated designs and wireframes into high-quality code using HTML, CSS and JavaScript 
+
+     - Created and assisted with design, development and support fo new and existing secure website and web applications
+
+     - Worked collaboratively with 3 development teams to identify issues with program pipelines and project scope
+
+     - Built API following RESTfull standards with .netcore and node.js
+     
+     <p style="color: rgba(255,255,255, 0.8);">Tech: JS, Anuglar, Typescript, Node.js, MSSQL, Dynamics CRM, Git, HTML, CSS, CSS-in-JS .NET, C#</p>
+
+    `,
     href: 'https://www.linkedin.com/company/schibsted-tech-polska/',
+    companyName: 'Schibsted',
   },
   {
     id: 4,
     headline: 'Software Engineer',
     logo: qm,
-    start: 'September, 2011',
-    end: 'May, 2014',
     startTime: new Date('2011-09-01'),
     endTime: new Date('2014-05-01'),
-    body: 'Software house',
+    body: `
+     - working in all kinds of development areas including frontend and backend as well desktop apps and websites
+
+     <p style="color: rgba(255,255,255, 0.8);">Tech: JS, MSSQL, T-SQL, OLAP cube, data warehouse, SVN, HTML, CSS, .NET, C#, Web Forms, WPF</p>
+    `,
     href: 'https://www.linkedin.com/company/qumak-sa/',
+    companyName: 'Qumak',
   },
 ];
-
-const workTime = (startDate: Date, endDate: Date) => {
-  const diffMonths =
-    (endDate.getFullYear() - startDate.getFullYear()) * 12 +
-    (endDate.getMonth() - startDate.getMonth() - 1);
-
-  const diffYears = Math.floor(diffMonths / 12);
-  const months = diffMonths % 12;
-
-  if (diffYears) {
-    if (diffYears > 1 && months >= 1) {
-      return `${diffYears} years, ${months} Month`;
-    }
-    if (months > 1) {
-      return `${diffYears} year, ${months} Month`;
-    }
-    if (months === 0) {
-      return `${diffYears} years`;
-    }
-  }
-  return `${months} Month`;
-};
-
-const date = (startDate: Date, endDate: Date) => {
-  const startMonth = months[startDate.getMonth()];
-  const endMonth = months[endDate.getMonth()];
-  const startYear = startDate.getFullYear();
-  const endYear = endDate.getFullYear();
-  if (endDate.toDateString() === new Date().toDateString()) {
-    return `${startMonth}, ${startYear} - Present`;
-  }
-  return `${startMonth}, ${startYear} - ${endMonth}, ${endYear}`;
-};
 
 export type Ref = HTMLDivElement;
 
@@ -191,11 +143,18 @@ const HomeExperience = ({}: IProps) => {
         <Col>
           <HomeSectionHeader>Experience</HomeSectionHeader>
           <HomeSectionSubHeader>
-            Some work experience show on my site.
+            {/* Some work experience show on my site. */}
           </HomeSectionSubHeader>
         </Col>
       </Row>
-      <RowStyled column>
+      <Style.RowExperience>
+        {items.map((item) => (
+          <div key={item.id} ref={(element) => pinRef(refs, element)}>
+            <HomeExperienceItem item={item} />
+          </div>
+        ))}
+      </Style.RowExperience>
+      {/* <RowStyled column>
         {items.map((item) => (
           <Col key={item.id}>
             <Style.Item
@@ -224,7 +183,7 @@ const HomeExperience = ({}: IProps) => {
             </Style.Item>
           </Col>
         ))}
-      </RowStyled>
+      </RowStyled> */}
     </SectionWrapper>
   );
 };

@@ -38,7 +38,7 @@ const HomeSectionHeader = styled.h2`
   margin-bottom: 2rem;
   display: inline-block;
   font-weight: normal;
-  font-size: 3rem;
+  font-size: 2.5rem;
 `;
 
 const HomeSectionSubHeader = styled.h5`
