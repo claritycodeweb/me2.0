@@ -94,7 +94,7 @@ const Style = {
       font-size: 1.3rem;
       color: rgb(113, 113, 122);
     `,
-    Desc: styled.p`
+    Desc: styled.div`
       line-height: 2rem;
       font-size: 1.4rem;
       color: rgb(161 161 170);

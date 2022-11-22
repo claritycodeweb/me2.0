@@ -22,7 +22,12 @@ const RowExperience = styled.div`
   }
 `;
 
-const Style = { RowExperience };
+const AnimateItem = styled.div`
+  opacity: 0;
+  transition: all 0.5s ease-in;
+`;
+
+const Style = { RowExperience, AnimateItem };
 
 const items: IExperience[] = [
   {
@@ -149,41 +154,11 @@ const HomeExperience = ({}: IProps) => {
       </Row>
       <Style.RowExperience>
         {items.map((item) => (
-          <div key={item.id} ref={(element) => pinRef(refs, element)}>
+          <AnimateItem key={item.id} ref={(element) => pinRef(refs, element)}>
             <HomeExperienceItem item={item} />
-          </div>
+          </AnimateItem>
         ))}
       </Style.RowExperience>
-      {/* <RowStyled column>
-        {items.map((item) => (
-          <Col key={item.id}>
-            <Style.Item
-              ref={(element) => pinRef(refs, element)}
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
-              title={item.headline}
-            >
-              <Style.ItemImageWrapper>
-                <Image
-                  src={item.logo}
-                  width={80}
-                  height={80}
-                  alt={item.headline}
-                />
-              </Style.ItemImageWrapper>
-              <Style.ItemMediaBody>
-                <h2>{item.headline}</h2>
-                <h5>
-                  {date(item.startTime, item.endTime)}
-                  &nbsp;({workTime(item.startTime, item.endTime)})
-                </h5>
-                <p>{item.body}</p>
-              </Style.ItemMediaBody>
-            </Style.Item>
-          </Col>
-        ))}
-      </RowStyled> */}
     </SectionWrapper>
   );
 };
