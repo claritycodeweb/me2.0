@@ -39,13 +39,17 @@ const items: IExperience[] = [
     body: `
       - Led and managed a frontend developers and designers team to create efficient, effective and visually aesthetic websites and mobile apps
 
+      - Provided technical leadership by mentoring junior engineers on best practices related to software development and engineering processes.
+
       - Active participation in the development of the project both from the programming and UX/UI side, architecture and functionality
 
       - Helping to make key business and technical decision 
 
       - Built API following RESTfull standards
 
-      <p style="color: rgba(255,255,255, 0.8);">Tech: JS, ReactJS, React Native, Redux, Next.js Context API, Typescript, Node.js, MSSQL, Docker, Kubernates, Terraform, Git, HTML, CSS, SASS, Apollo, Jest</p>
+      - Developed and maintained React Native components, screens, and features for the mobile app
+
+      <p style="color: rgba(255,255,255, 0.8);">Tech: JS, ReactJS, React Native, Redux, Next.js Context API, Typescript, Node.js, Express, MSSQL, Docker, Kubernates, Terraform, Git, HTML, CSS, SASS, Apollo, Jest</p>
     `,
     href: 'https://www.linkedin.com/company/classeek/',
     companyName: 'Classeek',
@@ -71,7 +75,7 @@ const items: IExperience[] = [
 
     - Helping to make key business and technical decision 
 
-    <p style="color: rgba(255,255,255, 0.8);">Tech: JS, ReactJS,  Redux, GraphQL, Typescript, Node.js, MSSQL, Docker, Swarn, Sketch, Git, HTML, CSS, SASS, Apollo, .netcore, C#, entity-framework, Jest</p>
+    <p style="color: rgba(255,255,255, 0.8);">Tech: JS, ReactJS,  Redux, GraphQL, Typescript, Node.js, Express, MSSQL, Docker, Swarn, Sketch, Git, HTML, CSS, SASS, Apollo, .netcore, C#, entity-framework, Jest</p>
 
     `,
     href: 'https://www.linkedin.com/company/lookmove/',
