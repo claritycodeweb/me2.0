@@ -39,7 +39,7 @@ const items: IExperience[] = [
     body: `
       - Led and managed a frontend developers and designers team to create efficient, effective and visually aesthetic websites and mobile apps
 
-      - Provided technical leadership by mentoring junior engineers on best practices related to software development and engineering processes.
+      - Provided technical leadership by mentoring on best practices related to software development and engineering processes.
 
       - Active participation in the development of the project both from the programming and UX/UI side, architecture and functionality
 
