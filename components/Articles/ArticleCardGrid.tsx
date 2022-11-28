@@ -33,7 +33,7 @@ const ArticleCardWrapper = styled.div<{ featured: boolean }>`
   width: 100%;
   position: relative;
   flex-direction: column;
-  border-radius: 2px;
+  border-radius: 4px;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
