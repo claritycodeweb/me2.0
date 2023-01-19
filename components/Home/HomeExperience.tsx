@@ -32,7 +32,7 @@ const Style = { RowExperience, AnimateItem };
 const items: IExperience[] = [
   {
     id: 1,
-    headline: 'Senior Full-Stack Developer',
+    headline: 'Senior Full-Stack Developer (Consultant)',
     logo: cl,
     startTime: new Date('2020-06-01'),
     endTime: new Date(),
