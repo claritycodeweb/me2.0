@@ -37,7 +37,7 @@ const items: IExperience[] = [
     startTime: new Date('2020-06-01'),
     endTime: new Date(),
     body: `
-      - Led and managed a frontend developers and designers team to create efficient, effective and visually aesthetic websites and mobile apps
+      - Led and managed a frontend/design to create efficient, effective and visually aesthetic websites and mobile apps
 
       - Provided technical leadership by mentoring on best practices related to software development and engineering processes.
 
