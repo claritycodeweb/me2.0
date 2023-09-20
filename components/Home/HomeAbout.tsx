@@ -193,7 +193,7 @@ const HomeAbout = ({}: IProps) => {
               <MainButton
                 onClick={() => {
                   window.open(
-                    'https://drive.google.com/file/d/15yjcRUdin8SwR4LrNY8tyD9QdpT7iS6C/view?usp=sharing',
+                    'https://drive.google.com/file/d/1PToUB_ZylU-LGhbEyKLODEn_v_pFjJVd/view?usp=sharing',
                     '_blank'
                   );
                 }}
